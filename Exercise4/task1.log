@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.11.29)  29 NOV 2017 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.11.29)  29 NOV 2017 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1084,28 +1084,39 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
- [2] (./task1.aux) ) 
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 76.
+
+(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (44.24385pt too wide) in paragraph at lines 75--77
+\T1/cmtt/m/n/10.95 https : / / docs . google . com / presentation / d / 1xyitan
+yQwcztTYPRZUFfqwm49kiid7wTx3jvsXzBOEs /
+ []
+
+[2] (./task1.aux) ) 
 Here is how much of TeX's memory you used:
- 27002 strings out of 492985
- 650752 string characters out of 6138637
+ 27024 strings out of 492985
+ 651389 string characters out of 6138637
  942119 words of memory out of 5000000
- 30088 multiletter control sequences out of 15000+600000
- 13948 words of font info for 39 fonts, out of 8000000 for 9000
+ 30106 multiletter control sequences out of 15000+600000
+ 14262 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,9n,100p,8850b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1
-.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/eurosym/feymr10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx
-1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/
-share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dis
-t/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/cm-super/sfsx2074.pfb>
-Output written on task1.pdf (2 pages, 119659 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.
+enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/eurosym/feymr10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1
+095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist
+/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
+ftt1095.pfb>
+Output written on task1.pdf (2 pages, 152637 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
