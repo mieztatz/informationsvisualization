@@ -2,43 +2,128 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <title>Does the Octoberfst influence...</title>
+    <link rel="stylesheet" href="style.css">
+
     <script src="liquidFillGauge.js" language="JavaScript"></script>
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+
+    <link rel="stylesheet" href="styleBulletCharts.css">
+    <script src="bullet.js"></script>
     <style>
         .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
     </style>
 </head>
+
+<header class="header">
+  INFORMATIONSVIZUALISATION
+</header>
+
+<div class="picture">
+  <div class="">
+
+    <h1>The Oktoberfest and its effects</h1>
+  </div>
+</div>
 <body>
-<svg id="fillgauge" width="97%" height="250" onclick="gauge.update(NewValue());"></svg>
-<h1>The Oktoberfest and its effects</h1>
 
-<script language="JavaScript">
-    var config = liquidFillGaugeDefaultSettings();
-    config.circleThickness = 0.1;
-    config.circleColor = "#ce810b";
-    config.textColor = "#ce810b";
-    config.waveTextColor = "#fff381";
-    config.waveColor = "#efa90e";
-    config.textVertPosition = 0.52;
-    config.waveAnimateTime = 5000;
-    config.waveHeight = 0.1;
-    config.waveAnimate = true;
-    config.waveCount = 2;
-    config.waveOffset = 0.25;
-    config.textSize = 1.2;
-    config.minValue = 30;
-    config.maxValue = 150
-    config.displayPercent = false;
-    var gauge = loadLiquidFillGauge("fillgauge", 120, config);
+<div class="section">Box 1</div>
+<div class="section">Box 2</div>
+<div class="section">Box 3</div>
 
-    function NewValue(){
-        if(Math.random() > .5){
-            return Math.round(Math.random()*100);
-        } else {
-            return (Math.random()*100).toFixed(1);
-        }
-    }
+<div class="section">
+  <h2>Does the rising beer price influence the drinking behavior of Oktoberfest visitors?</h2>
+  <svg id="fillgauge" width="97%" height="250" onclick="gauge.update(NewValue());"></svg>
+  <script language="JavaScript">
+      var config = liquidFillGaugeDefaultSettings();
+      config.circleThickness = 0.1;
+      config.circleColor = "#ce810b";
+      config.textColor = "#ce810b";
+      config.waveTextColor = "#fff381";
+      config.waveColor = "#efa90e";
+      config.textVertPosition = 0.52;
+      config.waveAnimateTime = 5000;
+      config.waveHeight = 0.1;
+      config.waveAnimate = true;
+      config.waveCount = 2;
+      config.waveOffset = 0.25;
+      config.textSize = 1.2;
+      config.minValue = 30;
+      config.maxValue = 150
+      config.displayPercent = false;
+      var gauge = loadLiquidFillGauge("fillgauge", 120, config);
+
+      function NewValue(){
+          if(Math.random() > .5){
+              return Math.round(Math.random()*100);
+          } else {
+              return (Math.random()*100).toFixed(1);
+          }
+      }
+  </script>
+</div>
+
+<div class="section">
+  <button>Update</button>
+
+<script>
+
+var margin = {top: 5, right: 40, bottom: 20, left: 120},
+    width = 960 - margin.left - margin.right,
+    height = 50 - margin.top - margin.bottom;
+
+var chart = d3.bullet()
+    .width(width)
+    .height(height);
+
+d3.json("bullets.json", function(error, data) {
+  if (error) throw error;
+
+  var svg = d3.select("body").selectAll("svg")
+      .data(data)
+    .enter().append("svg")
+      .attr("class", "bullet")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(chart);
+
+  var title = svg.append("g")
+      .style("text-anchor", "end")
+      .attr("transform", "translate(-6," + height / 2 + ")");
+
+  title.append("text")
+      .attr("class", "title")
+      .text(function(d) { return d.title; });
+
+  title.append("text")
+      .attr("class", "subtitle")
+      .attr("dy", "1em")
+      .text(function(d) { return d.subtitle; });
+
+  d3.selectAll("button").on("click", function() {
+    svg.datum(randomize).call(chart.duration(1000)); // TODO automatic transition
+  });
+});
+
+function randomize(d) {
+  if (!d.randomizer) d.randomizer = randomizer(d);
+  d.ranges = d.ranges.map(d.randomizer);
+  d.markers = d.markers.map(d.randomizer);
+  d.measures = d.measures.map(d.randomizer);
+  return d;
+}
+
+function randomizer(d) {
+  var k = d3.max(d.ranges) * .2;
+  return function(d) {
+    return Math.max(0, d + k * (Math.random() - .5));
+  };
+}
+
 </script>
+</div>
+
 </body>
 </html>
