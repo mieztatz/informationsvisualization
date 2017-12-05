@@ -1,0 +1,182 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: #fff;
+    margin: 0;
+    padding-top: 0;
+    color: #333;
+    font-size: 15px;
+    font-weight:300;
+}
+
+p {
+    margin: 5px 0;
+    line-height: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: #888;
+}
+
+/* ========================================================================== */
+/* HEADER AND NAVIGATION */
+
+header {
+    width: auto;
+    height: 600px;
+    text-align: center;
+    background-image: url("./images/header_image.jpg");
+    background-size: 100%;
+}
+
+header h1 {
+    margin-top: 0px;
+    padding-top: 200px;
+}
+
+nav {
+    z-index: 9999;
+    /*background-color: #fff;*/
+    margin-top: 300px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 3px 20px;
+    color: #888;
+}
+
+nav ul li a {
+    transition: color .5s ease;
+    font-weight: 400;
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+    color: #fff;
+}
+
+
+/* ========================================================================== */
+/* BLOCKS */
+
+section {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section:nth-child(odd) {
+    background-color: #eef2f5;
+}
+
+figure {
+    margin: 0;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+article {
+    overflow: hidden;
+    width: 50%;
+    display: table-cell;
+}
+
+article h4  {
+    margin: 10px 0;
+}
+
+figcaption {
+    display: inline-block;
+    line-height: 25px;
+    margin-top: 20px;
+    max-width: 75%;
+}
+
+figcaption span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.content {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 10px 30px;
+    width: auto;
+    max-width: 800px;
+}
+
+.content > h3 {
+    font-weight: 300;
+    font-size: 30px;
+    text-align: center;
+}
+
+.heading-small {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.text {
+    margin-bottom: 60px;
+}
+
+.text p {
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================================================== */
+/* FOOTER */
+
+footer {
+    clear: both;
+    position: relative;
+    margin:0 auto 0;
+    width: auto;
+    height: 100px;
+    text-align: center;
+    background: #333;
+    color: #7d7d7d;
+}
+
+footer .footer-text {
+    margin: 40px auto 0;
+    max-width: 800px;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+/* ========================================================================== */
+/* HELPER */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.clear {
+    clear: both;
+}
+
+/* Underlining */
+.hr-small {
+    margin: -20px auto 30px;
+    width: 40px;
+    border: solid 1px #2280b2;
+}
