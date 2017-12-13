@@ -5,8 +5,17 @@
 
     <title>InfoVis</title>
 
+    <script src="http://d3js.org/d3.v2.js"></script>
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     <link href='./style.css' rel='stylesheet' type='text/css'>
+
+    <!-- Chart1 -->
+    <link href='./chart1/chart1.css' rel='stylesheet' type='text/css'>
+
+    <!-- Chart2 -->
+    <script language="javascript" type="text/javascript" src="./chart2/chart2_1.js"></script>
+
 </head>
 
 <body>
@@ -35,16 +44,16 @@
         <h3>Beer Price</h3>
         <hr class="underlining"/>
 
-        <h4 class="heading-small">Does the rising beer price influence the Oktoberfest visitors?</h4>
+        <h4 class="heading-small text-center">Does the rising beer price influence the Oktoberfest visitors?</h4>
         <div class="text">
 
             <div>
-                <span id="chart_price_consumption"></span>
-                <span>
+                <div id="chart1"></div>
+                <div>
                     <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
-                </span>
+                </div>
             </div>
 
             <div>
@@ -53,7 +62,7 @@
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
                 </span>
-                <span id="fillgauge"></span>
+                <svg id="fillgauge" width="97%" height="250" onclick="gauge.update(NewValue());"></svg>
             </div>
 
             <div>
@@ -76,7 +85,7 @@
         <h3>Tourists</h3>
         <hr class="underlining"/>
 
-        <h4 class="heading-small">Does the number of tourists influence the number of Oktoberfest visitors?</h4>
+        <h4 class="heading-small text-center">Does the number of tourists influence the number of Oktoberfest visitors?</h4>
         <div class="text">
             <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -125,7 +134,7 @@
 
         <article>
             <figure>
-                <img src="./Images/mops.png"> <!-- Example image -->
+                <img src="./images/mops.png"> <!-- Example image -->
                 <figcaption>
                     <h4>
                         Heading
@@ -145,6 +154,10 @@
         Projektgruppe: Diana Irmscher und Katrin Kolb
     </div>
 </footer>
+
+<!-- Chart scripts -->
+<script language="javascript" type="text/javascript" src="./chart1/chart1.js"></script>
+<script language="javascript" type="text/javascript" src="./chart2/chart2_2.js"></script>
 
 </body>
 </html>
