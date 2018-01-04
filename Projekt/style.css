@@ -1,0 +1,46 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', serif;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+.header {
+  color: #FFFFFF;
+  background-color: #000000;
+  padding: 10px;
+}
+.picture {
+  background-image: url('img/DSC02172.JPG');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: local;
+  background-size: cover;
+  height: 900px;
+}
+.heading {
+
+}
+.section {
+  background-color:#FFFFFF;
+  opacity:1;
+  border: 1px solid black;
+}
+
+button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.bullet { font: 10px sans-serif; }
+.bullet .marker { stroke: #000; stroke-width: 2px; }
+.bullet .tick line { stroke: #666; stroke-width: .5px; }
+.bullet .range.s0 { fill: #eee; }
+.bullet .range.s1 { fill: #ddd; }
+.bullet .range.s2 { fill: #ccc; }
+.bullet .measure.s0 { fill: lightsteelblue; }
+.bullet .measure.s1 { fill: steelblue; }
+.bullet .title { font-size: 14px; font-weight: bold; }
+.bullet .subtitle { fill: #999; }

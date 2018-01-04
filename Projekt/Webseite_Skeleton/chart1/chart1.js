@@ -3,7 +3,7 @@
 
 // define dimensions of graph
 var m = [80, 80, 80, 80]; // margins
-var w = 800 - m[1] - m[3];	// width
+var w = 1600 - m[1] - m[3];	// width
 var h = 400 - m[0] - m[2]; // height
 
 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
