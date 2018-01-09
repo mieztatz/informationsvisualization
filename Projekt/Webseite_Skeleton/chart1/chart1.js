@@ -17,6 +17,7 @@ var data2 = [54541, 53807, 51842, 50951, 51241, 54300, 54686, 48888, 51933, 5210
 // X scale will fit all values from data[] within pixels 0-w
 var x = d3.scale.ordinal().domain([1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
 2013, 2014, 2015, 2016, 2016]).rangeRoundBands([0, w], 1);
+
 //var x = d3.scale.linear().domain([0, data1.length]).range([0, w]);
 //var x = d3.scale.linear().domain([0, data1.length]).range([0, w]);
 // Y scale will fit values from 0-10 within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
