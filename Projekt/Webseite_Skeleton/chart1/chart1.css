@@ -30,6 +30,7 @@ path {
 
 .x.axis text {
     font-size: 14;
+    cursor: pointer;
 }
 
 .y.axis line, .y.axis path {

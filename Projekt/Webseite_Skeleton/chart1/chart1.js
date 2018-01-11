@@ -1,6 +1,8 @@
 /* implementation heavily influenced by http://bl.ocks.org/1166403 */
 /* some arguments AGAINST the use of dual-scaled axes line graphs can be found at http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf */
 
+
+var year = 1885;
 // define dimensions of graph
 var m = [80, 80, 80, 80]; // margins
 var w = 1600 - m[1] - m[3];	// width
@@ -74,6 +76,11 @@ var line2 = d3.svg.line()
           .attr("transform", "translate(0," + h + ")")
           .call(xAxis);
 
+    d3.selectAll(".x.axis text")
+    .on("click", function(d) {
+      year = d;
+      gauge.update(NewValue());
+    });
 
     // create left yAxis
     var yAxisLeft = d3.svg.axis().scale(y1).ticks(4).orient("left");
