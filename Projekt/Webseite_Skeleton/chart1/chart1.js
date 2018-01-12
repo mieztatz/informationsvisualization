@@ -4,8 +4,8 @@
 
 var year = 1885;
 // define dimensions of graph
-var m = [80, 80, 80, 80]; // margins
-var w = 1600 - m[1] - m[3];	// width
+var m = [50, 50, 50, 50]; // margins
+var w = 1000 - m[1] - m[3];	// width
 var h = 400 - m[0] - m[2]; // height
 
 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
@@ -22,24 +22,23 @@ var x = d3.scale.ordinal().domain([1985, 1986, 1987, 1988, 1989, 1990, 1991, 199
 
 //var x = d3.scale.linear().domain([0, data1.length]).range([0, w]);
 //var x = d3.scale.linear().domain([0, data1.length]).range([0, w]);
-// Y scale will fit values from 0-10 within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
-var y1 = d3.scale.linear().domain([0, 10]).range([h, 0]); // in real world the domain would be dynamically calculated from the data
-var y2 = d3.scale.linear().domain([0, 72000]).range([h, 0]);  // in real world the domain would be dynamically calculated from the data
-    // automatically determining max range can work something like this
-    // var y = d3.scale.linear().domain([0, d3.max(data)]).range([h, 0]);
+// Y scale will fit values from 0-d3.max(data) within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
+var y1 = d3.scale.linear().domain([0, d3.max(data1)]).range([h, 0]);
+var y2 = d3.scale.linear().domain([0, d3.max(data2)]).range([h, 0]);
+
 
 // create a line function that can convert data[] into x and y points
 var line1 = d3.svg.line()
     // assign the X function to plot our line as we wish
     .x(function(d,i) {
         // verbose logging to show what's actually being done
-        console.log('Plotting X1 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+        //console.log('Plotting X1 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
         // return the X coordinate where we want to plot this datapoint
         return x(i);
     })
     .y(function(d) {
         // verbose logging to show what's actually being done
-        console.log('Plotting Y1 value for data point: ' + d + ' to be at: ' + y1(d) + " using our y1Scale.");
+        //console.log('Plotting Y1 value for data point: ' + d + ' to be at: ' + y1(d) + " using our y1Scale.");
         // return the Y coordinate where we want to plot this datapoint
         return y1(d);
     })
@@ -49,13 +48,13 @@ var line2 = d3.svg.line()
     // assign the X function to plot our line as we wish
     .x(function(d,i) {
         // verbose logging to show what's actually being done
-        console.log('Plotting X2 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+        //console.log('Plotting X2 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
         // return the X coordinate where we want to plot this datapoint
         return x(i);
     })
     .y(function(d) {
         // verbose logging to show what's actually being done
-        console.log('Plotting Y2 value for data point: ' + d + ' to be at: ' + y2(d) + " using our y2Scale.");
+        //console.log('Plotting Y2 value for data point: ' + d + ' to be at: ' + y2(d) + " using our y2Scale.");
         // return the Y coordinate where we want to plot this datapoint
         return y2(d);
     })
@@ -69,25 +68,26 @@ var line2 = d3.svg.line()
           .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
     // create yAxis
-    var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+    var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(false);
     // Add the x-axis.
     graph.append("svg:g")
           .attr("class", "x axis")
           .attr("transform", "translate(0," + h + ")")
           .call(xAxis);
 
+    // Add links to the labels of the x-axis
     d3.selectAll(".x.axis text")
-    .on("click", function(d) {
-      year = d;
-      gauge.update(NewValue());
-    });
+          .on("click", function(d) {
+            year = d;
+            gauge.update(updateValue(year));
+          });
 
     // create left yAxis
     var yAxisLeft = d3.svg.axis().scale(y1).ticks(4).orient("left");
     // Add the y-axis to the left
     graph.append("svg:g")
           .attr("class", "y axis axisLeft")
-          .attr("transform", "translate(-15,0)")
+          .attr("transform", "translate(-5,0)")
           .call(yAxisLeft);
 
     // create right yAxis
@@ -95,10 +95,9 @@ var line2 = d3.svg.line()
     // Add the y-axis to the right
     graph.append("svg:g")
           .attr("class", "y axis axisRight")
-          .attr("transform", "translate(" + (w+15) + ",0)")
+          .attr("transform", "translate(" + (w+5) + ",0)")
           .call(yAxisRight);
 
     // add lines
-    // do this AFTER the axes above so that the line is above the tick-lines
     graph.append("svg:path").attr("d", line1(data1)).attr("class", "data1");
     graph.append("svg:path").attr("d", line2(data2)).attr("class", "data2");

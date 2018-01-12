@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>OKTOBERFEST</title>
 
-    <!-- D3.js, Version 3 -->
+    <!-- D3.js, Version 2 und 3 -->
     <script src="http://d3js.org/d3.v2.js"></script>
     <script src="../d3v3/d3.js"></script>
 
@@ -47,37 +47,54 @@
         <h4 class="heading-small text-center">Does the rising beer price influence the Oktoberfest visitors?</h4>
         <div class="text">
 
-            <div>
+          <!-- Chart1 and Text -->
+            <div class="paragraph">
                 <div id="chart1"></div>
                 <div>
                     <p>
-                        TODO: Interaction - Slider to choose a year -> should automatically adjust value in gauge and per-person-consumption
+                        TODO: Interaction - Slider to choose a year -> should automatically adjust value in gauge and per-person-consumption </br>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
                 </div>
             </div>
 
-            <div>
-                <span>
+            <!-- Chart2 and Text -->
+            <div class="paragraph">
+                <div id="consumption_total" style="float:left; width: 75%;">
                     <p>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                     </p>
-                </span>
-                <svg id="fillgauge" width="20%" height="150" onclick="gauge.update(NewValue());" style="float:right; margin-left: 50px;"></svg>
+                </div>
+                <div >
+                  <!--<svg id="fillgauge" width="20%" height="150" onclick="gauge.update(updateValue(1985));" style="margin-left: 50px;"></svg>-->
+                  <svg id="fillgauge" width="20%" height="150" style="margin-left: 50px;"></svg>
+                </div>
             </div>
 
-            <div>
-                <span id="per_person_consumption"></span>
-                <span>
+            <!-- Graphics and Text -->
+            <div class="paragraph">
+                <div id="per_person_consumption" height="150" style="font-size: 30; float:left; width: 25%;">
+                  <img src="./images/consumption_man.png" height="150" style="float:left;">
+                  <p style="font-size: 5em; margin-top: 80px;">4L</p>
+                </div>
+                <div>
                     <p>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
-                </span>
+                </div>
             </div>
 
-            <div id="chart3">
-                <!-- parallel coordinates diagram - not implemented yet, but as extra file -->
-
+            <!-- Chart3 and Text -->
+            <div class="paragraph">
+              <div style="padding-bottom: 40px;">
+                  <p>
+                      TODO: Explanation Parallel Coordinates </br>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                  </p>
+              </div>
+              <div id="chart3"></div>
             </div>
+
 
         </div>
     </div>
@@ -156,9 +173,14 @@
 <!-- FOOTER -->
 <footer>
     <div class="footer-text">
-        Projektgruppe: Diana Irmscher und Katrin Kolb
+        Projektgruppe: Diana Irmscher und Katrin Kolb. </br>
+        Bilder und Grafiken von
+        <a href="https://pixabay.com/">Pixabay.</a>
     </div>
 </footer>
+
+<!-- ============================================================================================================================== -->
+<!-- SCRIPTS -->
 
 <!-- Chart scripts -->
 <script language="javascript" type="text/javascript" src="./chart1/chart1.js"></script>

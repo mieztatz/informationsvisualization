@@ -10,11 +10,21 @@ config.waveHeight = 0.1;
 config.waveAnimate = true;
 config.waveCount = 2;
 config.waveOffset = 0.25;
-config.textSize = 1.2;
-config.minValue = 30;
-config.maxValue = 150
+config.textSize = 1.0;
+config.minValue = 45000;
+config.maxValue = 80000;
 config.displayPercent = false;
-var gauge = loadLiquidFillGauge("fillgauge", 120, config);
+var gauge = loadLiquidFillGauge("fillgauge", 54541, config); // value for 1985
+
+function updateValue(year){
+    d3v3.csv("chart2/oktoberfestgesamt.csv", function(error, data) { // anscheinend hier Fehler/Problem
+        data.forEach(function(d) {
+          if(d.jahr == year) {
+            return d.bier_konsum;
+          }
+        });
+    });
+}
 
 function NewValue(){
     if(Math.random() > .5){
