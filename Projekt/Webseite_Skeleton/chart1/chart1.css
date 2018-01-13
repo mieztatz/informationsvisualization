@@ -4,11 +4,11 @@ path {
     fill: none;
 }
 
-.data1 {
+.beerpricePerYear {
     stroke: steelblue;
 }
 
-.data2 {
+.visitorsPerYear {
     stroke: orange;
 }
 
@@ -31,6 +31,10 @@ path {
 .x.axis text {
     font-size: 14;
     cursor: pointer;
+}
+
+.x.axis text.active {
+  fill: orange;
 }
 
 .y.axis line, .y.axis path {

@@ -7,6 +7,8 @@
     <!-- D3.js, Version 3 -->
     <script src="http://d3js.org/d3.v2.js"></script>
     <script src="../d3v3/d3.js"></script>
+    <script src="../RadialProgress/radialProgress.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 
     <!-- Styles global -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
@@ -14,6 +16,7 @@
 
     <!-- Chart1 -->
     <link href='./chart1/chart1.css' rel='stylesheet' type='text/css'>
+    <link href='./chart2/chart2_3.css' rel='stylesheet' type='text/css'>
     <link href='./chart3/chart3.css' rel='stylesheet' type='text/css'>
 
     <!-- Chart2 -->
@@ -57,6 +60,13 @@
             </div>
 
             <div>
+              <div id='outer' style="margin-top:40px; padding:10px">
+                  <div id="main" style="width:600px; height:200px; margin: 0px auto; ">
+                      <!--div id="div1"></div-->
+                      <div id="div2"></div>
+                      <!--div id="div3"></div-->
+                  </div>
+              </div>
                 <span>
                     <p>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
@@ -80,6 +90,7 @@
             </div>
 
         </div>
+        <div style="clear: both;"></div>
     </div>
 </section>
 
@@ -110,6 +121,7 @@
 
         <h4 class="heading-small">Does the number of visitors influence the birth rate?</h4>
         <h4 class="heading-small">Does the alcohol consumption influence the birth rate in Munich?</h4>
+
         <!-- With JavaScript filling in the graphs? -->
         <article>
             <figure>
@@ -152,6 +164,12 @@
     </div>
 </section>
 
+<section>
+  <div style="width: 50%; margin: 0 auto">
+    <canvas id="chart4"></canvas>
+  </div>
+</section>
+
 <!-- ============================================================================================================================== -->
 <!-- FOOTER -->
 <footer>
@@ -163,7 +181,9 @@
 <!-- Chart scripts -->
 <script language="javascript" type="text/javascript" src="./chart1/chart1.js"></script>
 <script language="javascript" type="text/javascript" src="./chart2/chart2_2.js"></script>
+<script language="javascript" type="text/javascript" src="./chart2/chart2_3.js"></script>
 <script language="javascript" type="text/javascript" src="./chart3/chart3.js"></script>
+<script language="javascript" type="text/javascript" src="./chart4/chart4.js"></script>
 
 </body>
 </html>

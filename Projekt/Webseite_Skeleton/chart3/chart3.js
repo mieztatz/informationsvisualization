@@ -17,7 +17,10 @@ var svg = d3v3.select("#chart3").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+csvData = [];
+
 d3v3.csv("chart3/oktoberfestgesamt.csv", function(error, cars) {
+  csvData = cars;
 
   // Extract the list of dimensions and create a scale for each.
   x.domain(dimensions = d3v3.keys(cars[0]).filter(function(d) {
