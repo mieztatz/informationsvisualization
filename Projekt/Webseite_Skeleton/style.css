@@ -74,6 +74,11 @@ nav ul li a:active {
 /* ========================================================================== */
 /* BLOCKS */
 
+.paragraph {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 section {
     position: relative;
     margin: 0 auto;
@@ -121,7 +126,8 @@ figcaption span {
     margin: 0 auto;
     padding: 0 10px 30px;
     width: auto;
-    max-width: 1600px;
+    max-width: 1000px;
+    min-width: 1000px;
 }
 
 .content > h3 {
@@ -141,6 +147,13 @@ figcaption span {
 
 .text p {
     margin-bottom: 1.5rem;
+}
+
+/* ========================================================================== */
+/* CHARTS */
+
+#chart3 {
+  text-align: center;
 }
 
 /* ========================================================================== */
