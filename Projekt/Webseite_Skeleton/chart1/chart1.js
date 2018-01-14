@@ -4,9 +4,11 @@
 
 var year = 1885;
 // define dimensions of graph
-var m = [80, 80, 80, 80]; // margins
-var w = 1600 - m[1] - m[3];	// width
+var m = [50, 50, 50, 50]; // margins
+var w = 1000 - m[1] - m[3];	// width
 var h = 400 - m[0] - m[2]; // height
+
+// TODO: Liter in Hektoliter und Besucher in Millionen oder in Text!
 
 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
 var beerpricePerYear = [3.20, 3.30, 3.37, 3.45, 3.60, 3.77, 4.21, 4.42, 4.71, 4.89, 5.15, 5.24, 5.45, 5.60, 5.80, 6.35, 6.47, 6.75, 6.75,
@@ -23,24 +25,23 @@ var x = d3.scale.ordinal().domain(years).rangeRoundBands([0, w], 1);
 
 //var x = d3.scale.linear().domain([0, beerpricePerYear.length]).range([0, w]);
 //var x = d3.scale.linear().domain([0, beerpricePerYear.length]).range([0, w]);
-// Y scale will fit values from 0-10 within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
-var y1 = d3.scale.linear().domain([0, 10]).range([h, 0]); // in real world the domain would be dynamically calculated from the data
-var y2 = d3.scale.linear().domain([0, 72000]).range([h, 0]);  // in real world the domain would be dynamically calculated from the data
-    // automatically determining max range can work something like this
-    // var y = d3.scale.linear().domain([0, d3.max(data)]).range([h, 0]);
+// Y scale will fit values from 0-d3.max(data) within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
+var y1 = d3.scale.linear().domain([0, d3.max(beerpricePerYear)]).range([h, 0]);
+var y2 = d3.scale.linear().domain([0, d3.max(visitorsPerYear)]).range([h, 0]);
+
 
 // create a line function that can convert data[] into x and y points
 var line1 = d3.svg.line()
     // assign the X function to plot our line as we wish
     .x(function(d,i) {
         // verbose logging to show what's actually being done
-        console.log('Plotting X1 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+        //console.log('Plotting X1 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
         // return the X coordinate where we want to plot this datapoint
         return x(i);
     })
     .y(function(d) {
         // verbose logging to show what's actually being done
-        console.log('Plotting Y1 value for data point: ' + d + ' to be at: ' + y1(d) + " using our y1Scale.");
+        //console.log('Plotting Y1 value for data point: ' + d + ' to be at: ' + y1(d) + " using our y1Scale.");
         // return the Y coordinate where we want to plot this datapoint
         return y1(d);
     })
@@ -50,13 +51,13 @@ var line2 = d3.svg.line()
     // assign the X function to plot our line as we wish
     .x(function(d,i) {
         // verbose logging to show what's actually being done
-        console.log('Plotting X2 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+        //console.log('Plotting X2 value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
         // return the X coordinate where we want to plot this datapoint
         return x(i);
     })
     .y(function(d) {
         // verbose logging to show what's actually being done
-        console.log('Plotting Y2 value for data point: ' + d + ' to be at: ' + y2(d) + " using our y2Scale.");
+        //console.log('Plotting Y2 value for data point: ' + d + ' to be at: ' + y2(d) + " using our y2Scale.");
         // return the Y coordinate where we want to plot this datapoint
         return y2(d);
     })
@@ -70,21 +71,30 @@ var line2 = d3.svg.line()
           .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
     // create yAxis
-    var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+    var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(false); // True adds additional lines, which are not needed
     // Add the x-axis.
     graph.append("svg:g")
           .attr("class", "x axis")
           .attr("transform", "translate(0," + h + ")")
           .call(xAxis);
 
+    // Updates chart1 after click on year (link) and also updates the gauge
+    // TODO: Evtl schöner auslagern?
     d3.select(".x.axis text").classed("active", true);
     d3.selectAll(".x.axis text")
     .on("click", function(year) {
+      // Set color of labels
       graph.selectAll(".x.axis text").classed("active", false);
       d3.select(this).classed("active", true);
+
       for (var i = 0; i < csvData.length; i++) {
         if (csvData[i].jahr == year) {
-          gauge.update(csvData[i].bier_konsum);
+          gauge.update(csvData[i].bier_konsum); // TODO: *100 da Hektoliter
+          var consumption_per_person = (csvData[i].bier_konsum*100) / (csvData[i].besucher_gesamt*1000000);
+          console.log("konsum" + csvData[i].bier_konsum*100);
+          console.log("gesamt" + csvData[i].besucher_gesamt*10000);
+          console.log("ber" + consumption_per_person);
+          d3.select("#per_person_consumption_value").html(consumption_per_person.toFixed(2) + "L");
           return;
         }
       }
@@ -95,7 +105,7 @@ var line2 = d3.svg.line()
     // Add the y-axis to the left
     graph.append("svg:g")
           .attr("class", "y axis axisLeft")
-          .attr("transform", "translate(-15,0)")
+          .attr("transform", "translate(-5,0)")
           .call(yAxisLeft);
 
     // create right yAxis
@@ -103,7 +113,7 @@ var line2 = d3.svg.line()
     // Add the y-axis to the right
     graph.append("svg:g")
           .attr("class", "y axis axisRight")
-          .attr("transform", "translate(" + (w+15) + ",0)")
+          .attr("transform", "translate(" + (w+5) + ",0)")
           .call(yAxisRight);
 
     // add lines

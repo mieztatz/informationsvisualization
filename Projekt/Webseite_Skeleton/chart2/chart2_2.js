@@ -10,11 +10,11 @@ config.waveHeight = 0.1;
 config.waveAnimate = true;
 config.waveCount = 2;
 config.waveOffset = 0.25;
-config.textSize = 1.2;
-config.minValue = 45000;
+config.textSize = 1.0;
+config.minValue = 46000;
 config.maxValue = 82000;
 config.displayPercent = false;
-var gauge = loadLiquidFillGauge("fillgauge", 54541, config);
+var gauge = loadLiquidFillGauge("fillgauge", 54541, config); // 54541 is value for 1985
 
 function NewValue(){
     if(Math.random() > .5){

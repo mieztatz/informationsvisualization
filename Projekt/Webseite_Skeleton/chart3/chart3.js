@@ -1,5 +1,5 @@
 var margin = {top: 30, right: 10, bottom: 10, left: 10},
-    width = 960 - margin.left - margin.right,
+    width = 800 - margin.left - margin.right, // vorher 960
     height = 500 - margin.top - margin.bottom;
 
 var x = d3v3.scale.ordinal().rangePoints([0, width], 1),
@@ -19,13 +19,13 @@ var svg = d3v3.select("#chart3").append("svg")
 
 csvData = [];
 
-d3v3.csv("chart3/oktoberfestgesamt.csv", function(error, cars) {
-  csvData = cars;
+d3v3.csv("chart3/oktoberfestgesamt.csv", function(error, data) {
+  csvData = data;
 
   // Extract the list of dimensions and create a scale for each.
-  x.domain(dimensions = d3v3.keys(cars[0]).filter(function(d) {
+  x.domain(dimensions = d3v3.keys(data[0]).filter(function(d) {
     return d != "name" && (y[d] = d3v3.scale.linear()
-        .domain(d3v3.extent(cars, function(p) { return +p[d]; }))
+        .domain(d3v3.extent(data, function(p) { return +p[d]; }))
         .range([height, 0]));
   }));
 
@@ -33,7 +33,7 @@ d3v3.csv("chart3/oktoberfestgesamt.csv", function(error, cars) {
   background = svg.append("g")
       .attr("class", "background")
     .selectAll("path")
-      .data(cars)
+      .data(data)
     .enter().append("path")
       .attr("d", path);
 
@@ -41,7 +41,7 @@ d3v3.csv("chart3/oktoberfestgesamt.csv", function(error, cars) {
   foreground = svg.append("g")
       .attr("class", "foreground")
     .selectAll("path")
-      .data(cars)
+      .data(data)
     .enter().append("path")
       .attr("d", path);
 
