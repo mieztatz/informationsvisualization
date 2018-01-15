@@ -78,8 +78,7 @@ var line2 = d3.svg.line()
           .attr("transform", "translate(0," + h + ")")
           .call(xAxis);
 
-    // Updates chart1 after click on year (link) and also updates the gauge
-    // TODO: Evtl schöner auslagern?
+    // Updates chart1 after click on year (link) and also updates the gauge, and per_person_consumption
     d3.select(".x.axis text").classed("active", true);
     d3.selectAll(".x.axis text")
     .on("click", function(year) {
@@ -87,17 +86,7 @@ var line2 = d3.svg.line()
       graph.selectAll(".x.axis text").classed("active", false);
       d3.select(this).classed("active", true);
 
-      for (var i = 0; i < csvData.length; i++) {
-        if (csvData[i].jahr == year) {
-          gauge.update(csvData[i].bier_konsum); // TODO: *100 da Hektoliter
-          var consumption_per_person = (csvData[i].bier_konsum*100) / (csvData[i].besucher_gesamt*1000000);
-          console.log("konsum" + csvData[i].bier_konsum*100);
-          console.log("gesamt" + csvData[i].besucher_gesamt*10000);
-          console.log("ber" + consumption_per_person);
-          d3.select("#per_person_consumption_value").html(consumption_per_person.toFixed(2) + "L");
-          return;
-        }
-      }
+      updateGauge(year); // in file chart2_1
     });
 
     // create left yAxis

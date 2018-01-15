@@ -16,12 +16,13 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     <link href='./style.css' rel='stylesheet' type='text/css'>
 
-    <!-- Chart1 -->
+    <!-- Charts Styles -->
     <link href='./chart1/chart1.css' rel='stylesheet' type='text/css'>
     <link href='./chart2/chart2_3.css' rel='stylesheet' type='text/css'>
     <link href='./chart3/chart3.css' rel='stylesheet' type='text/css'>
+    <link href='./chart5/chart5.css' rel='stylesheet' type='text/css'>
 
-    <!-- Chart2 -->
+    <!-- Charts Scripts -->
     <script language="javascript" type="text/javascript" src="./chart2/chart2_1.js"></script>
 </head>
 
@@ -45,6 +46,7 @@
 <!-- ============================================================================================================================== -->
 <!-- BLOCK 1 -->
 <section id="block1">
+
     <div class="content text-left">
         <h3>Beer Price</h3>
         <hr class="underlining"/>
@@ -57,7 +59,7 @@
                 <div id="chart1"></div>
                 <div>
                     <p>
-                        TODO: Interaction - Slider to choose a year -> should automatically adjust value in gauge and per-person-consumption </br>
+                        TODO: Units from different values -> its in million or hektoliter </br>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
                 </div>
@@ -97,7 +99,7 @@
                 </div>
                 <div >
                   <!--<svg id="fillgauge" width="20%" height="150" onclick="gauge.update(updateValue(1985));" style="margin-left: 50px;"></svg>-->
-                  <svg id="fillgauge" width="20%" height="150" onclick="gauge.update(NewValue());" style="margin-left: 50px;"></svg>
+                  <svg id="fillgauge" width="20%" height="150" style="margin-left: 50px;"></svg> <!-- onclick ist quatsch, außer wir ändern die farbe der links und per_kopf_anzeige mit -->
                 </div>
             </div>
 
@@ -105,7 +107,7 @@
             <div class="paragraph">
                 <div id="per_person_consumption" height="150" style="font-size: 30; float:left; width: 25%;">
                   <img src="./images/consumption_man.png" height="150" style="float:left;">
-                  <p id="per_person_consumption_value" style="font-size: 3em; margin-top: 80px;">4L</p>
+                  <p id="per_person_consumption_value" style="font-size: 3em; margin-top: 80px;">0.77L</p> <!-- dyn. mit methode besser -->
                 </div>
                 <div>
                     <p>
@@ -133,6 +135,7 @@
 <!-- ============================================================================================================================== -->
 <!-- BLOCK 2 -->
 <section id="block2">
+
     <div class="content text-left">
         <h3>Tourists</h3>
         <hr class="underlining"/>
@@ -143,9 +146,14 @@
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
             </p>
         </div>
-
-
     </div>
+
+    <section>
+      <div style="width: 50%; margin: 0 auto">
+        <canvas id="chart4"></canvas>
+      </div>
+    </section>
+
 </section>
 
 <!-- ============================================================================================================================== -->
@@ -158,10 +166,11 @@
         <h4 class="heading-small">Does the number of visitors influence the birth rate?</h4>
         <h4 class="heading-small">Does the alcohol consumption influence the birth rate in Munich?</h4>
 
-        <!-- With JavaScript filling in the graphs? -->
+        <!-- War kurzzeitig zu sehen, aber nun nicht mehr... TODO durch viele gleiche Variablennamen kommen sihc die Diagramme in die quere -->
+        <div id="chart5" style="margin: 0 auto"></div>
+
         <article>
             <figure>
-                <img src=""> <!-- Example image -->
                 <figcaption>
                     <h4>
                         Heading
@@ -171,7 +180,11 @@
             </figure>
         </article>
 
-        <br class="clear"/>
+        <div id="chart6">
+
+        </div>
+
+        <!--<br class="clear"/>-->
     </div>
 </section>
 
@@ -226,6 +239,7 @@
 <script language="javascript" type="text/javascript" src="./chart2/chart2_3.js"></script>
 <script language="javascript" type="text/javascript" src="./chart3/chart3.js"></script>
 <script language="javascript" type="text/javascript" src="./chart4/chart4.js"></script>
+<script language="javascript" type="text/javascript" src="./chart5/chart5.js"></script>
 
 </body>
 </html>

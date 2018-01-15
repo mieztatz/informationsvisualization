@@ -5,6 +5,9 @@
  *
  * Liquid Fill Gauge v1.1
  */
+
+// Declarations of used methods
+
 function liquidFillGaugeDefaultSettings(){
     return {
         minValue: 46000, // The gauge minimum value.
@@ -265,4 +268,16 @@ function loadLiquidFillGauge(elementId, value, config) {
     }
 
     return new GaugeUpdater();
+}
+
+// Update the gauge with the value which belongs to clicked link on chart1
+function updateGauge(year) {
+  for (var i = 0; i < csvData.length; i++) {
+    if (csvData[i].jahr == year) {
+      gauge.update(csvData[i].bier_konsum); // TODO: *100 da Hektoliter oder im text
+      var consumption_per_person = (csvData[i].bier_konsum*100) / (csvData[i].besucher_gesamt*1000000);
+      d3.select("#per_person_consumption_value").html(consumption_per_person.toFixed(2) + "L");
+      return;
+    }
+  }
 }

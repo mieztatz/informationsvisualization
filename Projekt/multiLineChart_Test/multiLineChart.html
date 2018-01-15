@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<title>Line Graph with Dual-scaled Axes using SVG and d3.js</title>
+		<script src="http://mbostock.github.com/d3/d3.v2.js"></script>
+		<style>
+			/* tell the SVG path to be a thin blue line without any area fill */
+			path {
+				stroke-width: 1;
+				fill: none;
+			}
+
+			.data1 {
+				stroke: steelblue;
+			}
+
+			.data2 {
+				stroke: orange;
+			}
+
+			.axis {
+			  shape-rendering: crispEdges;
+			}
+
+			.x.axis line {
+			  stroke: lightgrey;
+			}
+
+			.x.axis .minor {
+			  stroke-opacity: .5;
+			}
+
+			.x.axis path {
+			  display: none;
+			}
+
+			.x.axis text {
+				font-size: 14;
+			}
+
+			.y.axis line, .y.axis path {
+			  fill: none;
+			  stroke: #000;
+			}
+
+			.y.axis text {
+				font-size: 14;
+			}
+
+			.y.axisRight text {
+				fill: orange;
+			}
+
+			.y.axisLeft text {
+				fill: steelblue;
+			}
+		</style>
+	</head>
+	<body>
+
+
+	<div id="graph" class="aGraph" style="position:absolute;top:0px;left:0; float:left;"></div>
+
+
+	<script>
+		/* implementation heavily influenced by http://bl.ocks.org/1166403 */
+		/* some arguments AGAINST the use of dual-scaled axes line graphs can be found at http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf */
+
+		// define dimensions of graph
+		var m = [80, 80, 80, 80]; // margins
+		var w = 1600 - m[1] - m[3];	// width
+		var h = 400 - m[0] - m[2]; // height
+
+		// create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
+    var data1 = [3.20, 3.30, 3.37, 3.45, 3.60, 3.77, 4.21, 4.42, 4.71, 4.89, 5.15, 5.24, 5.45, 5.60, 5.80, 6.35, 6.47, 6.75, 6.75,
+      7.02, 7.15, 7.42, 7.85, 8.25, 8.53, 8.79, 9.09, 9.41, 9.78, 9.98, 10.27, 10.57];
+
+		var data2 = [6.20, 3.30, 3.37, 6.45, 3.60, 3.77, 6.21, 4.42, 4.71, 4.89, 5.15, 5.24, 5.45, 5.60, 5.80, 9.35, 6.47, 6.75, 6.75,
+	     7.02, 7.15, 7.42, 7.85, 8.25, 8.53, 8.79, 9.09, 9.41, 9.78, 9.98, 10.27, 10.57];
+
+
+		// X scale will fit all values from data[] within pixels 0-w
+    var x = d3.scale.ordinal().domain([1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
+      2013, 2014, 2015, 2016, 2016]).rangeRoundBands([0, w], 1);
+    //var x = d3.scale.linear().domain([0, data1.length]).range([0, w]);
+		//var x = d3.scale.linear().domain([0, data1.length]).range([0, w]);
+		// Y scale will fit values from 0-10 within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
+		var y1 = d3.scale.linear().domain([0, 10]).range([h, 0]); // in real world the domain would be dynamically calculated from the data
+
+
+
+		// create a line function that can convert data[] into x and y points
+		var line1 = d3.svg.line()
+			// assign the X function to plot our line as we wish
+			.x(function(d,i) {
+				return x(i);
+			})
+			.y(function(d) {
+				return y1(d);
+			})
+
+		// create a line function that can convert data[] into x and y points
+		var line2 = d3.svg.line()
+			// assign the X function to plot our line as we wish
+			.x(function(d,i) {
+				return x(i);
+			})
+			.y(function(d) {
+				return y1(d);
+			})
+
+
+			// Add an SVG element with the desired dimensions and margin.
+			var graph = d3.select("#graph").append("svg:svg")
+			      .attr("width", w + m[1] + m[3])
+			      .attr("height", h + m[0] + m[2])
+			    .append("svg:g")
+			      .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+			// create yAxis
+		    var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+			// Add the x-axis.
+			graph.append("svg:g")
+			      .attr("class", "x axis")
+			      .attr("transform", "translate(0," + h + ")")
+			      .call(xAxis);
+
+
+			// create left yAxis
+			var yAxisLeft = d3.svg.axis().scale(y1).ticks(4).orient("left");
+			// Add the y-axis to the left
+			graph.append("svg:g")
+			      .attr("class", "y axis axisLeft")
+			      .attr("transform", "translate(-15,0)")
+			      .call(yAxisLeft);
+
+	  		// create right yAxis
+	  		var yAxisRight = d3.svg.axis().scale(y2).ticks(6).orient("right");
+  			// Add the y-axis to the right
+  			graph.append("svg:g")
+  			      .attr("class", "y axis axisRight")
+  			      .attr("transform", "translate(" + (w+15) + ",0)")
+  			      .call(yAxisRight);
+
+			// add lines
+			// do this AFTER the axes above so that the line is above the tick-lines
+  			graph.append("svg:path").attr("d", line1(data1)).attr("class", "data1");
+  			graph.append("svg:path").attr("d", line2(data2)).attr("class", "data2");
+
+
+	</script>
+
+
+	</body>
+</html>
