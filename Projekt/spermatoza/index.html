@@ -9,12 +9,12 @@ body {
 ellipse {
   fill: #000;
 }
-
+/*
 path {
   fill: none;
   stroke: #000;
   stroke-linecap: round;
-}
+}*/
 
 .mid {
   stroke-width: 4px;
@@ -29,48 +29,55 @@ path {
     <script src="http://d3js.org/d3.v3.js"></script>
     <script>
 
-    var width = 400,
-        height = 200;
+    var width_sp = 400,
+        height_sp = 200;
 
-    var n = 30,
-        m = 12,
+    var n_sp = 30,
+        m_sp = 12,
         degrees = 180 / Math.PI;
 
-    var spermatozoa = d3.range(n).map(function() {
-      var x = Math.random() * width,
-          y = Math.random() * height;
+    var spermatozoa = d3.range(n_sp).map(function() {
+      var x = Math.random() * width_sp,
+          y = Math.random() * height_sp;
       return {
         vx: Math.random() * 2 - 1,
         vy: Math.random() * 2 - 1,
-        path: d3.range(m).map(function() { return [x, y]; }),
+        path: d3.range(m_sp).map(function() { return [x, y]; }),
         count: 0
       };
     });
 
-    var svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height);
 
-    var g = svg.selectAll("g")
+
+    var svg_sp = d3.select("body").append("svg")
+        .attr("width", width_sp)
+        .attr("height", height_sp);
+
+    var g_sp = svg_sp.selectAll("g")
         .data(spermatozoa)
       .enter().append("g");
 
-    var head = g.append("ellipse")
+    var head = g_sp.append("ellipse")
         .attr("rx", 6.5)
         .attr("ry", 4);
 
-    g.append("path")
+    g_sp.append("path")
         .datum(function(d) { return d.path.slice(0, 3); })
         .attr("class", "mid");
 
-    g.append("path")
+    g_sp.append("path")
         .datum(function(d) { return d.path; })
         .attr("class", "tail");
 
-    var tail = g.selectAll("path");
+    // ?
+    var tail = g_sp.selectAll("path")
+        .style("fill", "none")
+        .style("stroke", "#000")
+        .style("stroke-linecap", "round");
+
 
     d3.timer(function() {
-      for (var i = -1; ++i < n;) {
+      for (var i = -1; ++i < n_sp;) {
         var spermatozoon = spermatozoa[i],
             path = spermatozoon.path,
             dx = spermatozoon.vx,
@@ -81,12 +88,12 @@ path {
             count = speed * 10,
             k1 = -5 - speed / 3;
 
-        // Bounce off the walls.
-        if (x < 0 || x > width) spermatozoon.vx *= -1;
-        if (y < 0 || y > height) spermatozoon.vy *= -1;
+        // Bounce off the walls
+        if (x < 0 || x > width_sp) spermatozoon.vx *= -1;
+        if (y < 0 || y > height_sp) spermatozoon.vy *= -1;
 
-        // Swim!
-        for (var j = 0; ++j < m;) {
+        // Swimming
+        for (var j = 0; ++j < m_sp;) {
           var vx = x - path[j][0],
               vy = y - path[j][1],
               k2 = Math.sin(((spermatozoon.count += count) + j * 3) / 300) / speed;
@@ -107,6 +114,7 @@ path {
     function tailPath(d) {
       return "M" + d.join("L");
     }
+
 
     </script>
   </body>

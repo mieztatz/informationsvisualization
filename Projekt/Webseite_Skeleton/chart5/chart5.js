@@ -18,13 +18,13 @@ var spermatozoa = d3v3.range(n_sp).map(function() {
 
 
 
-var svg_sp = d3v3.select("#chart5").append("svg_sp")
+var svg_sp = d3v3.select("#chart5").append("svg")
     .attr("width", width_sp)
     .attr("height", height_sp);
 
-var g_sp = svg_sp.selectAll("g_sp")
+var g_sp = svg_sp.selectAll("g")
     .data(spermatozoa)
-  .enter().append("g_sp");
+  .enter().append("g");
 
 var head = g_sp.append("ellipse")
     .attr("rx", 6.5)
@@ -38,7 +38,6 @@ g_sp.append("path")
     .datum(function(d) { return d.path; })
     .attr("class", "tail");
 
-// ?
 var tail = g_sp.selectAll("path")
     .style("fill", "none")
     .style("stroke", "#000")
