@@ -1,0 +1,15 @@
+[ ] Texte zu Beer Price
+[ ] Texte zu Tourists
+[ ] Texte zu Birth Rate
+[ ] Texte zu Security
+
+[ ] Graph zu Security
+[ ] Graph zu Birth Rate (K: ich versuche gereade ein Mulitline Diagramm, wenn du andere Ideen hast?)
+[ ] Spermatoasa Graph zum Laufen kriegen
+[ ] RadialProgress? 
+
+[ ] Layout Feinschliff
+[ ] Code kommentieren, cleanen
+[ ] Lizenzen für Code?
+[ ] Präsentation
+
