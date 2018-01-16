@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Multiline</title>
     <link rel="stylesheet" type="text/css" href="multiline.css">
     <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
     <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
@@ -11,20 +11,36 @@
 <div class="chart-wrapper" id="chart-line1"></div>
 
 <script type="text/javascript">
-    d3.csv('multiline_data.csv', function(error, data) {
+    d3.csv('absolute_geburtenzahlen.csv', function(error, data) {
     data.forEach(function (d) {
-        d.year = +d.year;
-        d.variableA = +d.variableA;
-        d.variableB = +d.variableB;
-        d.variableC = +d.variableC;
-        d.variableD = +d.variableD;
+        d.Jahr = +d.Jahr;
+        d.Januar = +d.Januar;
+        d.Februar = +d.Februar;
+        d.Maerz = +d.Maerz;
+        d.April = +d.April;
+				d.Mai = +d.Mai;
+				d.Juni = +d.Juni;
+				d.Juli = +d.Juli;
+				d.August = +d.August;
+				d.Septemper = +d.Septemper;
+				d.Oktober = +d.Oktober;
+				d.November = +d.November;
+				d.Dezember = +d.Dezember;
     });
 
-    var chart = makeLineChart(data, 'year', {
-        'Variable A': {column: 'variableA'},
-        'Variable B': {column: 'variableB'},
-        'Variable C': {column: 'variableC'},
-        'Variable D': {column: 'variableD'}
+    var chart = makeLineChart(data, 'Jahr', {
+        'Januar': {column: 'Januar'},
+        'Februar': {column: 'Februar'},
+        'Maerz': {column: 'Maerz'},
+        'April': {column: 'April'},
+				'Mai': {column: 'Mai'},
+				'Juni': {column: 'Juni'},
+				'Juli': {column: 'Juli'},
+				'August': {column: 'August'},
+				'Septemper': {column: 'Septemper'},
+				'Oktober': {column: 'Oktober'},
+				'November': {column: 'November'},
+				'Dezember': {column: 'Dezember'}
     }, {xAxis: 'Years', yAxis: 'Amount'});
     chart.bind("#chart-line1");
     chart.render();
