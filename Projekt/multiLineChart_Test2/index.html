@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiline</title>
+    <link rel="stylesheet" type="text/css" href="multiline.css">
+    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+    <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+</head>
+<body>
+<div class="chart-wrapper" id="chart-line1"></div>
+
+<script type="text/javascript">
+    d3.csv('absolute_geburtenzahlen.csv', function(error, data) {
+    data.forEach(function (d) {
+        d.Monat = +d.Monat;
+        d.y2000 = +d.y2000;
+        d.y2001 = +d.y2001;
+        d.y2002 = +d.y2002;
+        d.y2003 = +d.y2003;
+				d.y2004 = +d.y2004;
+				d.y2005 = +d.y2005;
+				d.y2006 = +d.y2006;
+				d.y2007 = +d.y2007;
+				d.y2008 = +d.y2008;
+				d.y2009 = +d.y2009;
+				d.y2010 = +d.y2010;
+				d.y2011 = +d.y2011;
+				d.y2012 = +d.y2012;
+				d.y2013 = +d.y2013;
+				d.y2014 = +d.y2014;
+				d.y2015 = +d.y2015;
+
+    });
+
+    var chart = makeLineChart(data, 'Monat', {
+        '2000': {column: 'y2000'},
+        '2001': {column: 'y2001'},
+        '2002': {column: 'y2002'},
+        '2003': {column: 'y2003'},
+				'2004': {column: 'y2004'},
+				'2005': {column: 'y2005'},
+				'2006': {column: 'y2006'},
+				'2007': {column: 'y2007'},
+				'2008': {column: 'y2008'},
+				'2009': {column: 'y2009'},
+				'2010': {column: 'y2010'},
+				'2011': {column: 'y2011'},
+				'2012': {column: 'y2012'},
+				'2013': {column: 'y2013'},
+				'2014': {column: 'y2014'},
+				'2015': {column: 'y2015'}
+    }, {xAxis: 'Monate', yAxis: 'Geburten Anzahl'});
+    chart.bind("#chart-line1");
+    chart.render();
+
+});
+</script>
+<script src="multiline.js" charset="utf-8"></script>
+</body>
+</html>
