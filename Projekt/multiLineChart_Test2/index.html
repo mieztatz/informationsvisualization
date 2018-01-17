@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Multiline</title>
     <link rel="stylesheet" type="text/css" href="multiline.css">
-    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
-    <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+
+    <script src="../d3v3/d3.js"></script>
 </head>
 <body>
 <div class="chart-wrapper" id="chart-line1"></div>
 
 <script type="text/javascript">
-    d3.csv('absolute_geburtenzahlen.csv', function(error, data) {
+    d3v3.csv('absolute_geburtenzahlen.csv', function(error, data) {
     data.forEach(function (d) {
         d.Monat = +d.Monat;
         d.y2000 = +d.y2000;
