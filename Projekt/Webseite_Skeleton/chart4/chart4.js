@@ -34,11 +34,12 @@ d3v3.csv("chart4/data.csv", function(error, data) {
           },
           title: {
               display: true,
-              text: 'Chart.js Bar Chart'
+              text: 'Tourists and Oktoberfest visitors in Munich'
           },
           scales: {
             yAxes: [{
                 ticks: {
+                    beginAtZero: true,
                     callback: function (value) {
                         return d3.format(",.2r")(value)
                     }

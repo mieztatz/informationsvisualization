@@ -1,5 +1,5 @@
 var margin = {top: 30, right: 10, bottom: 10, left: 10},
-    width = 800 - margin.left - margin.right, // vorher 960
+    width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var x = d3v3.scale.ordinal().rangePoints([0, width], 1),
