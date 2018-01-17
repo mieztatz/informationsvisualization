@@ -3,12 +3,11 @@
 [ ] Texte zu Birth Rate
 [ ] Texte zu Security
 
-[ ] Graph zu Birth Rate (K: ich versuche gereade ein Mulitline Diagramm, wenn du andere Ideen hast?)
+[X] Graph zu Birth Rate
 [ ] Spermatoasa Graph zum Laufen kriegen
 
 [ ] Layout Feinschliff
 [ ] Code kommentieren, cleanen
-[ ] Lizenzen für Code?
-[ ] Präsentation
+[ ] Lizenzen fï¿½r Code?
+[ ] Prï¿½sentation
 [ ] Website online stellen
- 

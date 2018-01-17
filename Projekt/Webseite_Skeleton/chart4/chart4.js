@@ -8,17 +8,17 @@ d3v3.csv("chart4/data.csv", function(error, data) {
       data: {
         labels:   data.map(d => d['Jahr']),
         datasets: [{
-            label: 'Gäste',
+            label: 'Touristen',
             backgroundColor: "#4682b4",
             borderColor: '#4682b4',
             borderWidth: 1,
-            data: data.map(d => d['Gäste'])
+            data: data.map(d => d['Touristen'])
         }, {
-            label: 'Besucher',
+            label: 'Oktoberfestbesucher',
             backgroundColor: '#FFA500',
             borderColor: '#FFA500',
             borderWidth: 1,
-            data: data.map(d => d['Besucher'])
+            data: data.map(d => d['Oktoberfestbesucher'])
         }]
       },
       options: {

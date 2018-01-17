@@ -8,8 +8,7 @@
     <script src="http://d3js.org/d3.v2.js"></script>
     <script src="d3v3/d3.js"></script>
 
-    <!-- RadialProgress -->
-    <script src="../RadialProgress/radialProgress.js"></script>
+    <!-- Import für Chart4 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 
     <!-- Styles global -->
@@ -168,24 +167,24 @@
         <h4 class="heading-small">Does the number of visitors influence the birth rate?</h4>
         <h4 class="heading-small">Does the alcohol consumption influence the birth rate in Munich?</h4>
 
-        <!-- War kurzzeitig zu sehen, aber nun nicht mehr... TODO durch viele gleiche Variablennamen kommen sihc die Diagramme in die quere -->
-        <div id="chart5" style="margin: 0 auto"></div> <!-- Hier wäre Animation -->
+        <!-- Nur eine kleine, nette Annimation -->
+        <div id="chart5" style="margin: 0 auto"></div>
 
         <article>
             <figure>
                 <figcaption>
                     <h4>
-                        Heading
+                        The Birthrate in Munich
                     </h4>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                 </figcaption>
             </figure>
         </article>
 
+        <!-- Diagramm für Geburtenrate mit etwas Interaktion -->
         <div id="chart6">
           <div class="chart-wrapper" id="chart-line1"></div>
-
-        </div> <!-- Diagramm für Geburtenrate evtl mit etwas Interaktion -->
+        </div>
 
         <!--<br class="clear"/>-->
     </div>
@@ -193,43 +192,11 @@
 </section>
 
 <!-- ============================================================================================================================== -->
-<!-- BLOCK 4 -->
-<section id="block4">
-    <div class="content text-center">
-        <h3>Security</h3>
-        <hr class="underlining"/>
-
-        <h4 class="heading-small">Do other aspects like security risks influence visitor numbers?</h4>
-
-
-        <article>
-            <figure>
-                <img src="./images/mops.png"> <!-- Example image -->
-                <figcaption>
-                    <h4>
-                        Heading
-                    </h4>
-                    Lorem mopsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                </figcaption>
-            </figure>
-        </article>
-
-    </div>
-</section>
-
-<!-- TODO: Warum hier? -->
-<section>
-  <div style="width: 50%; margin: 0 auto">
-    <canvas id="chart4"></canvas>
-  </div>
-</section>
-
-<!-- ============================================================================================================================== -->
 <!-- FOOTER -->
 <footer>
     <div class="footer-text">
-        Projektgruppe: Diana Irmscher und Katrin Kolb. </br>
-        Bilder und Grafiken von
+        Projectgroup: Diana Irmscher and Katrin Kolb. </br>
+        Pictures und grafics by
         <a href="https://pixabay.com/">Pixabay.</a>
     </div>
 </footer>
@@ -240,9 +207,10 @@
 <!-- Chart scripts -->
 <script language="javascript" type="text/javascript" src="./chart1/chart1.js"></script>
 <script language="javascript" type="text/javascript" src="./chart2/chart2_2.js"></script>
-<script language="javascript" type="text/javascript" src="./chart2/chart2_3.js"></script>
+<!--script language="javascript" type="text/javascript" src="./chart2/chart2_3.js"></script-->
 <script language="javascript" type="text/javascript" src="./chart3/chart3.js"></script>
 <script language="javascript" type="text/javascript" src="./chart4/chart4.js"></script>
+<script language="javascript" type="text/javascript" src="./chart5/chart5.js"></script>
 <script language="javascript" type="text/javascript" src="./chart6/chart6.js"></script>
 
 
