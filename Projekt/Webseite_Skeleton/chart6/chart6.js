@@ -104,7 +104,7 @@ function makeLineChart(dataset, xName, yObjs, axisLables) {
     chartObj.max = function (fn) {
         return d3v3.max(chartObj.data, fn);
     };
-    chartObj.yScale = d3v3.scale.linear().range([chartObj.height, 0]).domain([0, d3v3.max(chartObj.yFuncts.map(chartObj.max))]);
+    chartObj.yScale = d3v3.scale.linear().range([chartObj.height, 0]).domain([600, d3v3.max(chartObj.yFuncts.map(chartObj.max))]);
 
     chartObj.formatAsYear = d3v3.format("");
 
