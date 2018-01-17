@@ -10,4 +10,5 @@
 [ ] Code kommentieren, cleanen
 [ ] Lizenzen für Code?
 [ ] Präsentation
-
+[ ] Website online stellen
+ 
