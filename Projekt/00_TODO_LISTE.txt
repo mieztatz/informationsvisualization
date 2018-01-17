@@ -1,13 +1,12 @@
 [ ] Texte zu Beer Price
 [ ] Texte zu Tourists
 [ ] Texte zu Birth Rate
-[ ] Texte zu Security
 
 [X] Graph zu Birth Rate
-[ ] Spermatoasa Graph zum Laufen kriegen
+[X] Spermatoasa Graph zum Laufen kriegen
 
 [ ] Layout Feinschliff
 [ ] Code kommentieren, cleanen
 [ ] Lizenzen f�r Code?
-[ ] Pr�sentation
+[X] Pr�sentation
 [ ] Website online stellen
