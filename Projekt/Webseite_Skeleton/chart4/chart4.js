@@ -1,3 +1,4 @@
+/* Created with chart.js*/
 
 d3v3.csv("chart4/data.csv", function(error, data) {
 
@@ -15,8 +16,8 @@ d3v3.csv("chart4/data.csv", function(error, data) {
             data: data.map(d => d['Guests'])
         },{
             label: 'Overnight Stay',
-            backgroundColor: "#4682b4",
-            borderColor: '#4682b4',
+            backgroundColor: "#005399",
+            borderColor: '#005399',
             borderWidth: 1,
             data: data.map(d => d['Overnight Stay'])
         }, {

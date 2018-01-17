@@ -1,3 +1,5 @@
+/* NOT USED ON WEBSITE */
+
 var div1=d3.select(document.getElementById('div1'));
 var div2=d3.select(document.getElementById('div2'));
 var div3=d3.select(document.getElementById('div3'));

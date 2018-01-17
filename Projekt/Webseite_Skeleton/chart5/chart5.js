@@ -1,8 +1,8 @@
 var width_sp = 400,
     height_sp = 200;
 
-var n_sp = 15,
-    m_sp = 10,
+var n_sp = 30,
+    m_sp = 12,
     degrees = 180 / Math.PI;
 
 var spermatozoa = d3v3.range(n_sp).map(function() {

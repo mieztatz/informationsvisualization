@@ -17,7 +17,6 @@
 
     <!-- Charts Styles -->
     <link href='./chart1/chart1.css' rel='stylesheet' type='text/css'>
-    <link href='./chart2/chart2_3.css' rel='stylesheet' type='text/css'>
     <link href='./chart3/chart3.css' rel='stylesheet' type='text/css'>
     <link href='./chart5/chart5.css' rel='stylesheet' type='text/css'>
     <link href='./chart6/chart6.css' rel="stylesheet" type="text/css">
@@ -60,7 +59,7 @@
                 <div>
                     <p>
                         We want to consider the context between the beer price and the consumption behavior of the Oktoberfest visitors. Every year we can observe,
-                        that the beer price will increase.
+                        that the beer price increases.
 
                         The line graph above shows the price change in German Marks and Euro and the beer consumption in hectolitre from 1985 to 2016.
                         <br>
@@ -68,7 +67,7 @@
                         <br>
                         While the price is continuously and almost linearly rising, the consumption had low points in 2001 and 2016. A reason for the low
                         in 2001 might be the September 11 attacks in the USA. It seems almost logical that a lot of Americans and also people from other countries
-                        were frightened by big events like the Oktoberfest in Munich and crowds. In 2016 there was antoher attack, but this time directly in Munich, Germany.
+                        were frightened by big events like the Oktoberfest in Munich and crowds. In 2016 there was another attack, a shooting spree, but this time directly in Munich, Germany.
                         Maybe this incident is decisive for the decline in the graph.
                     </p>
                 </div>
@@ -81,13 +80,12 @@
                        In the gauge we see the total consumption of beer in hectolitre.
                        <br>
                        We designed the gauge in the colors of beer, to visualize the context to the line graph before. The gauge will be updated by the choosen
-                       year in the linar graph.
+                       year in the linar graph. So, the label of each year is also a link.
 
                     </p>
                 </div>
                 <div >
-                  <!--<svg id="fillgauge" width="20%" height="150" onclick="gauge.update(updateValue(1985));" style="margin-left: 50px;"></svg>-->
-                  <svg id="fillgauge" width="20%" height="150" style="margin-left: 50px;"></svg> <!-- onclick ist quatsch, außer wir ändern die farbe der links und per_kopf_anzeige mit -->
+                  <svg id="fillgauge" width="20%" height="150" style="margin-left: 50px;"></svg>
                 </div>
             </div>
 
@@ -95,17 +93,17 @@
             <div class="paragraph">
                 <div id="per_person_consumption" height="150" style="font-size: 30; float:left; width: 25%;">
                   <img src="./images/consumption_man.png" height="150" style="float:left;">
-                  <p id="per_person_consumption_value" style="font-size: 3em; margin-top: 80px;">0.77L</p> <!-- dyn. mit methode besser -->
+                  <p id="per_person_consumption_value" style="font-size: 3em; margin-top: 80px;">0.77L</p>
                 </div>
                 <div>
                     <p>
-                        This little nice figure shows us the total consumption of beer per visotor on the Oktoberfest. Here we can see that the amount of beer
-                        tends up to more than one "Mass".
+                        This little nice figure shows us the total consumption of beer per visitor of the Oktoberfest. Here we can see that the amount of beer
+                        tends up to more than one "Mass" over the years.
                         <br>
-                        This visualisation will be updated by the choosen year in the first line graph.
+                        This visualisation will be updated by the chosen year in the first line graph.
                     </p>
                     <p>
-                        So we can see that on average people drink more alcohol on the Oktoberfest.
+                        So, we can see that on average people drink more and more alcohol at the Oktoberfest.
                     </p>
                 </div>
             </div>
@@ -114,12 +112,12 @@
             <div class="paragraph">
               <div style="padding-bottom: 40px;">
                   <p>
-                      For the whole dataset from Oktoberfest we had the idea to put them into a parallel coordinates graph. In this graph we can see some nice facts, like
+                      For the whole dataset from Oktoberfest we had the idea to put them into a parallel coordinates graph. In this graph we can see some nice facts, for example
                       that people drink more beer and eat less Hendl.
                   </p>
                   <p>
-                    Feel free to explore other facts by yourself. You can modify the visible lines. Therefore you can scale between the values on the vertical axis.
-                    You can also reorder the axis by click on the axis label and pull them to left are right direction.
+                    Feel free to explore other facts yourself. You can change the visible lines. You can also select ranges between the values ​​on the vertical axis.
+                    Moreover, you can rearrange the axis by clicking the axis label and dragging it to a new place in the graph.
                   </p>
               </div>
               <div id="chart3"></div>
@@ -140,20 +138,20 @@
         <h4 class="heading-small text-center">Does the number of tourists influence the number of Oktoberfest visitors?</h4>
         <div class="text">
             <p>
-              In this visualisation we would show up how the number of tourists in the city of munich influence the number of Oktoberfest visitors.
-              In the bar chart we can see, that the number of visitors fall up to 5.600.000 visitors in 2016. Contrary to this, the number of tourists
-              tends up in month september each year.
+              In this visualisation we wanted to show how the number of tourists in Munich influence the number of Oktoberfest visitors.
+              In the bar chart we can see, that the number of visitors drop to 5,600,000 visitors in 2016. Contrary to this, the number of tourists
+              tends up in month September each year.
             </p>
             <p>
-              Unfortunately, the dataset for the tourists in munich starts from 2006 to 2016, and is parted in months. So we decided to use the values in september to represent this visualisation,
-              because the Oktoberfest starts in middle of september and ends up in frist october week.
+              Unfortunately, the dataset for the tourists in Munich starts from 2006 to 2016, and is divided into months. So we decided to use the September values for this visualization,
+              since the Oktoberfest starts in mid-September and ends in the first week of October.
               <br>
-              From the dataset we chosse the values for guests and overnight stays in munich. This incudes the guests from inland and foreign countries.
+              From the dataset we have chosen the values for guests and overnight stays in Munich. This includes the guests from inland and foreign countries.
             </p>
             <p>
-              In the bar chart we can select the dataset we would see, so we can focus in the visualisation.
+              In the bar chart, we can select the record we want to see, so we can focus on the visualization.
               <br>
-              When we focus in guests and overnight stays, we can see that there are much more people in the city (quite probable for Oktoberfest) then the years before.
+              When we focus on guests and overnight stays, we can see that there are much more visitors in the city (quite probable for Oktoberfest) than the years before.
             </p>
 
         </div>
@@ -161,7 +159,7 @@
 
     <section>
       <div style="width: 50%; margin: 0 auto; padding-bottom: 100px;">
-        <canvas id="chart4"></canvas> <!-- Das könnte vom Umfang ja so bleiben, wenn das andere von Birth ausgebaut wird, wenn wirs hinkriegen -->
+        <canvas id="chart4"></canvas>
       </div>
     </section>
 
@@ -170,40 +168,37 @@
 <!-- ============================================================================================================================== -->
 <!-- BLOCK 3 -->
 <section id="block3">
-    <div class="content text-l">
+    <div class="content text-left">
         <h3>Birth Rate</h3>
         <hr class="underlining"/>
 
         <!-- Nur eine kleine, nette Annimation -->
-        <div id="chart5" style="margin: 0 auto"></div>
+        <div id="chart5" style="margin: 0 auto; text-align: center; padding-bottom: 20px;"></div>
 
-        <h4 class="heading-small">Does the number of visitors influence the birth rate?</h4>
-        <h4 class="heading-small">Does the alcohol consumption influence the birth rate in Munich?</h4>
+        <h4 class="heading-small text-center">Does the number of visitors influence the birth rate?</h4>
+        <h4 class="heading-small text-center">Does the alcohol consumption influence the birth rate in Munich?</h4>
 
-        <article>
-            <figure>
-                <figcaption>
-                    In addition to the general values of the Oktoberfest, we examined
-                    whether there is a correlation between the Oktoberfest visitors, their drinking behavior and the birth rate in the city of Munich. We can read those "facts" in newspapers and in web (see <a href="https://www.oktoberfest-live.de/wiesn-wissen/oktoberfest-2015-studie-baby-boom-nach-wiesn-erstaunlichsten-fakten-5574230.html"> here </a>
-                    and <a href="https://www.noz.de/deutschland-welt/vermischtes/artikel/622516/nach-dem-munchner-oktoberfest-steigt-die-geburtenrate#gallery&54894&0&622516"> here </a>).
-                    <br>
-                    In this visualisation, we can't see any context between the examined values, also not for the year 2010 and 2011. It is true, in 2011 were more visitors on Oktoberfest than the years before.
-                    But there are not more births in june or the weeks around this.
-                    Maybe in july were the birth rate higher, but it is also higher in the summer months in the other years.
-                    In fact we can see in other publications like <a href="https://www.statistik-bw.de/Presse/Pressemitteilungen/2016211"> this </a> or <a href="http://www.demografie-blog.de/2012/03/wann-die-kinder-kommen/"> this </a> that the summer months like august and september are those with a high birth rate.
-                    <br>
+        <div class="text">
+          In addition to the general values of the Oktoberfest, we examined
+          whether there is a correlation between the Oktoberfest visitors, their drinking behavior and the birth rate in the city of Munich. We can read those "facts" in newspapers and in the web (see <a href="https://www.oktoberfest-live.de/wiesn-wissen/oktoberfest-2015-studie-baby-boom-nach-wiesn-erstaunlichsten-fakten-5574230.html"> here </a>
+          and <a href="https://www.noz.de/deutschland-welt/vermischtes/artikel/622516/nach-dem-munchner-oktoberfest-steigt-die-geburtenrate#gallery&54894&0&622516"> here </a>).
+          <br>
+          In this visualization, we see no correlation between the examined values and even not for the year 2010 and 2011. It is true that in 2011 there were more visitors to Oktoberfest than in the previous years.
+          But in June or the following weeks, there are no more births.
+          Maybe the birth rate was higher in July, but also in the summer months of the other years.
+          In fact we can see in other publications like <a href="https://www.statistik-bw.de/Presse/Pressemitteilungen/2016211"> this </a> or <a href="http://www.demografie-blog.de/2012/03/wann-die-kinder-kommen/"> this </a> that the summer months like August and September are those with a high birth rate.
+          <br>
 
-                    The Oktoberfest ends up in first week in october. An pregnancy lasts round about 40 weeks. So the "Wiesn"-babies would be born in june. The visualisation shows no significant values in this month for the years from 2000 to 2015.
-                    Because we see no correlation between the Oktoberfest itselfs and the birth rate in the city, we can exclude also correlation beween the number of visitors or their alcohol consumption.
-            </figure>
-        </article>
+          The Oktoberfest ends in the first week of October. A pregnancy lasts around 40 weeks. So the "Wiesn"-babies would be born in June. The visualization shows no significant values in this month for the years from 2000 to 2015.
+          Since we see no correlation between the Oktoberfest itself and the birth rate in the city, we can also exclude a correlation between the number of visitors, their alcohol consumption and the birth rate.
+
+        </div>
 
         <!-- Diagramm für Geburtenrate mit etwas Interaktion -->
         <div id="chart6">
           <div class="chart-wrapper" id="chart-line1"></div>
         </div>
 
-        <!--<br class="clear"/>-->
     </div>
 
 </section>
@@ -224,12 +219,10 @@
 <!-- Chart scripts -->
 <script language="javascript" type="text/javascript" src="./chart1/chart1.js"></script>
 <script language="javascript" type="text/javascript" src="./chart2/chart2_2.js"></script>
-<!--script language="javascript" type="text/javascript" src="./chart2/chart2_3.js"></script-->
 <script language="javascript" type="text/javascript" src="./chart3/chart3.js"></script>
 <script language="javascript" type="text/javascript" src="./chart4/chart4.js"></script>
 <script language="javascript" type="text/javascript" src="./chart5/chart5.js"></script>
 <script language="javascript" type="text/javascript" src="./chart6/chart6.js"></script>
-
 
 </body>
 </html>

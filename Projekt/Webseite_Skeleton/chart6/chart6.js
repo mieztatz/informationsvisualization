@@ -38,7 +38,7 @@
 				'2013': {column: 'y2013'},
 				'2014': {column: 'y2014'},
 				'2015': {column: 'y2015'}
-    }, {xAxis: 'Monate', yAxis: 'Geburten Anzahl'});
+    }, {xAxis: 'months', yAxis: 'amount of birth'});
     chart.bind("#chart-line1");
     chart.render();
 
@@ -51,10 +51,6 @@ function makeLineChart(dataset, xName, yObjs, axisLables) {
     var color = d3v3.scale.category20b();
     chartObj.xAxisLable = axisLables.xAxis;
     chartObj.yAxisLable = axisLables.yAxis;
-    /*
-     yObjsects format:
-     {y1:{column:'',name:'name',color:'color'},y2}
-     */
 
     chartObj.data = dataset;
     chartObj.margin = {top: 15, right: 60, bottom: 30, left: 50};
@@ -238,7 +234,7 @@ function makeLineChart(dataset, xName, yObjs, axisLables) {
             }
 
             focus.select(".focus.line").attr("transform", "translate(" + chartObj.xScale(chartObj.xFunct(d)) + ")").attr("y1", minY);
-            focus.select(".focus.month").text("Monat: " + chartObj.xFormatter(chartObj.xFunct(d)));
+            focus.select(".focus.month").text("month: " + chartObj.xFormatter(chartObj.xFunct(d)));
         }
 
     };

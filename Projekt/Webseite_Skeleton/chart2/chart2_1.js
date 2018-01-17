@@ -274,7 +274,7 @@ function loadLiquidFillGauge(elementId, value, config) {
 function updateGauge(year) {
   for (var i = 0; i < csvData.length; i++) {
     if (csvData[i].jahr == year) {
-      gauge.update(csvData[i].bier_konsum); // TODO: *100 da Hektoliter oder im text
+      gauge.update(csvData[i].bier_konsum);
       var consumption_per_person = (csvData[i].bier_konsum*100) / (csvData[i].besucher_gesamt*1000000);
       d3.select("#per_person_consumption_value").html(consumption_per_person.toFixed(2) + "L");
       return;

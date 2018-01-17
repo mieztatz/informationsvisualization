@@ -17,11 +17,3 @@ config.minValue = 46000;
 config.maxValue = 82000;
 config.displayPercent = false;
 var gauge = loadLiquidFillGauge("fillgauge", 54541, config); // 54541 is value for 1985
-
-/*function NewValue(){
-    if(Math.random() > .5){
-        return Math.round(Math.random()*100);
-    } else {
-        return (Math.random()*100).toFixed(1);
-    }
-}*/
