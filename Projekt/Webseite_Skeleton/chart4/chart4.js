@@ -6,19 +6,25 @@ d3v3.csv("chart4/data.csv", function(error, data) {
   window.myBar = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels:   data.map(d => d['Jahr']),
+        labels:   data.map(d => d['Year']),
         datasets: [{
-            label: 'Touristen',
+            label: 'Guests',
             backgroundColor: "#4682b4",
             borderColor: '#4682b4',
             borderWidth: 1,
-            data: data.map(d => d['Touristen'])
+            data: data.map(d => d['Guests'])
+        },{
+            label: 'Overnight Stay',
+            backgroundColor: "#4682b4",
+            borderColor: '#4682b4',
+            borderWidth: 1,
+            data: data.map(d => d['Overnight Stay'])
         }, {
-            label: 'Oktoberfestbesucher',
+            label: 'Oktoberfest visitors',
             backgroundColor: '#FFA500',
             borderColor: '#FFA500',
             borderWidth: 1,
-            data: data.map(d => d['Oktoberfestbesucher'])
+            data: data.map(d => d['Oktoberfest visitors'])
         }]
       },
       options: {
