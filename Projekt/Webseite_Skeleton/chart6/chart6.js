@@ -48,7 +48,7 @@
 // http://bl.ocks.org/asielen/44ffca2877d0132572cb
 function makeLineChart(dataset, xName, yObjs, axisLables) {
     var chartObj = {};
-    var color = d3v3.scale.category10();
+    var color = d3v3.scale.category20b();
     chartObj.xAxisLable = axisLables.xAxis;
     chartObj.yAxisLable = axisLables.yAxis;
     /*
