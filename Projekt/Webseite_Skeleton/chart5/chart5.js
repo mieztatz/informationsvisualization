@@ -38,7 +38,7 @@ g_sp.append("path")
 
 var tail = g_sp.selectAll("path")
     .style("fill", "none")
-    .style("stroke", "#000")
+    .style("stroke", "#D8D8D8")
     .style("stroke-linecap", "round");
 
 

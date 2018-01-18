@@ -1,4 +1,4 @@
-jahr,dauer,besucher_gesamt,besucher_tag,bier_preis,bier_konsum,hendl_preis,hendl_konsum
+year,duration,visitors_total,visitors_day,beer_price,beer_consumption,hendl_price,hendl_consumption
 1985,16,7.1,444,3.20,54541,4.77,629520
 1986,16,6.7,419,3.30,53807,3.92,698137
 1987,16,6.5,406,3.37,51842,3.98,732859
@@ -9,7 +9,7 @@ jahr,dauer,besucher_gesamt,besucher_tag,bier_preis,bier_konsum,hendl_preis,hendl
 1992,16,5.9,369,4.42,48888,5.11,725612
 1993,16,6.5,406,4.71,51933,5.25,733517
 1994,16,6.6,413,4.89,52108,5.39,663135
-1995,16,6.7,419,5.15,50162,5.54,628890
+1995,16,6.7,419,5.15,50162,5.54,628890s
 1996,16,6.9,431,5.24,52622,5.45,595580
 1997,16,6.4,400,5.45,55891,5.38,699562
 1998,16,6.5,406,5.60,54782,5.34,603746
